@@ -4,13 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct plate{
-	int index;
-	char person;
-} plate;
-
 /*push adds a new data item to stack*/
-int push();
+int push(char newest_item, char *stack, int *index, int size);
 /*pop takes out the current item on top of stack*/
 int pop();
 /*checks if stack is empty (non existent)*/

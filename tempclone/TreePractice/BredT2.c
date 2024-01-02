@@ -45,7 +45,7 @@ void Traverse_Breadth2(treenode *root)
 			}
 
 			if (i < nodesInLevel - 1) {
-				printSpaces(4);
+				printSpaces(treeHeight - level + 1);
 			}
 		}
 	
@@ -53,11 +53,11 @@ void Traverse_Breadth2(treenode *root)
 
 	for (int i = 0; i < nodesInNextLevel; i++)
 	{
-		printSpaces(spaces	-	2);
+		printSpaces(spaces - 2);
 
 		if (current == NULL)
 		{
-			printSpaces(2);
+			printSpaces(treeHeight - level);
 			continue;
 		}
 
@@ -67,18 +67,18 @@ void Traverse_Breadth2(treenode *root)
 		}
 		else if (current->left != NULL && current->right == NULL)
 		{
-			printSpaces(2);
+			printSpaces(treeHeight - level);
 			putchar('/');
 		}
 		else if (current->left == NULL && current->right != NULL)
 		{
-			printSpaces(3);
+			printSpaces(treeHeight - level);
 			putchar('\\');
 		}else
 		{
-			printSpaces(2);
+			/*printSpaces(treeHeight - level); */
 			putchar('/');
-			printSpaces(2);
+			printSpaces(treeHeight - level);
 			putchar('\\');
 		}
 	}
